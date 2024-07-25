@@ -1,0 +1,641 @@
+html {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+/*     text-decoration: none;
+    border: none;
+    outline: none; */
+    scroll-behavior: smooth;
+/*     font-size: 62.5%;
+    overflow-x: hidden; */
+}
+
+:root {
+    --bg-color: rgb(180, 240, 55);
+    --second-bg-color: rgb(47, 97, 197);
+    --third-bg-color: rgb(210, 230, 90);
+    --fourth-bg-color: white;
+    --fifth-bg-color: black;
+    --text-color: white;
+    --second-text-color: black;
+    --third-text-color: rgb(180, 240, 55);
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 120;
+    width: 100vw;
+    height: 100vw;
+}
+
+/* tag header e figli */
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./media/INTRODUZIONE.jpg);
+    background-size: cover;
+    min-height: 500px;
+}
+
+ul {
+    padding: 20px;
+    margin: 0px;
+    text-align: center;
+}
+
+ul > li {
+    list-style-type: none;
+    display: inline-block;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+ul > li > a {
+    padding: 20px;
+    text-decoration: none;
+    color: whitesmoke;
+    transition: 0.5s;
+    border-radius: 4px;
+}
+
+ul > li > a:hover {
+    font-weight: 700;
+    background-color: var(--bg-color);
+    color: var(--second-text-color);
+    box-shadow: 0 0 45px var(--bg-color);
+    letter-spacing: 0.2em;
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 80px;
+    font-weight: 800;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.background-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+/* tutti i button avranno lo stesso comportamento */
+button {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 6px;
+    color: var(--second-text-color);
+    font-size: 16px;
+    font-weight: 250;
+    letter-spacing: 0.1em;
+    transition: 0.5s;
+}
+
+button:hover {
+    color: var(--text-color);
+    background-color: var(--fourth-bg-color);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    box-shadow: 0 0 35px var(--fourth-bg-color);
+}
+
+/* a questo button associo un comportamento diverso rispetto agli altri */
+.intro {
+    background: var(--bg-color);
+    padding: 12px 20px;
+    z-index: 1;
+    min-width: 200px;
+    margin: 10px;
+    cursor: pointer;
+    transition: color 0.6s linear; 
+    position: relative;
+}
+
+.intro::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: var(--fifth-bg-color);
+    z-index: -1;
+    transition: transform 0.5s;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+    transform: scaleX(0);
+    border-radius: 6px;
+}
+
+.intro:hover::before {
+    transform: scaleX(1);
+    border-radius: 6px;
+}
+
+/* sezione blue */
+#blue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    /* height: 100vh; */
+    min-height: 480px;
+}
+.blue {
+    background-color: var(--second-bg-color);
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: 340px;
+    width: 100vw;
+    /* height: 100vh; */
+    padding: 80px 80px;
+    color: var(--text-color);
+}
+
+.blue-1 h2 {
+    font-size: 40px;
+}
+
+.blue-1 p {
+    font-size: 16px;
+}
+
+.blue-1, .blue-2 {
+    width: 300px;
+    height: 250px;
+}
+
+.blue-2 {
+    background-image: url(./media/kimberly.avif);
+    background-size: cover;
+    border-radius: 120px 0px 120px 0px;
+    min-height: 60px;
+    min-width: 80px;
+    position: relative;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 10px;
+    right: -20px;
+}
+
+.blue-2 a {
+    color: var(--text-color);
+    text-decoration: none;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blue-2 svg {
+    width: 50px;
+    height: 50px;
+    fill: var(--text-color);
+    background-color: var(--fifth-bg-color);
+    border-radius: 50%;
+    margin: auto;
+    /* min-height: 30px;
+    min-width: 30px; */
+}
+
+.blue-2 svg:hover {
+    fill: var(--second-text-color);
+    background-color: var(--fourth-bg-color);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    box-shadow: 0 0 45px var(--fourth-bg-color); 
+    transition: 0.6s;  
+}
+
+/* section yellow */
+#yellow {
+    background-color: var(--third-bg-color);
+    min-height: 600px;
+    width: 100vw;
+}
+
+#yellow h2 {
+    text-align: center;
+    font-size: 40px;
+    margin: 0px;
+    padding: 50px;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.card-1, .card-2 {
+    width: 350px;
+    height: 400px;
+    background-color: var(--second-bg-color);
+    border-radius: 20px;
+    cursor: pointer;
+    /* min-height: 80px;
+    min-width: 60px; */
+}
+.card-1:hover {
+    box-shadow: 0 0 45px var(--second-bg-color);
+    transition: 0.6s;
+} 
+.card-2:hover {
+    box-shadow: 0 0 45px var(--second-bg-color);
+    transition: 0.6s;
+}
+
+.card-1 .image-1 {
+    background-image: url(./media/branding\ &\ marketing.jpg);
+    background-size: cover;
+    height: 300px;
+    width: 350px;
+    border-radius: 19px;
+}
+
+/* .card-1 .image-1:hover {
+    box-shadow: 0 0 45px var(--second-bg-color); 
+    transition: 0.6s;
+} */
+
+.card-2 .image-2 {
+    background-image: url(./media/social\ media.jpg);
+    background-size: cover;
+    height: 300px;
+    width: 350px;
+    border-radius: 19px;
+}
+
+/* .card-2 .image-2:hover {
+    box-shadow: 0 0 45px var(--second-bg-color); 
+    transition: 0.6s;
+} */
+
+.card p {
+    color: var(--text-color);
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#white {
+    width: 100vw;
+    min-height: 700px;
+    padding: 20px;
+}
+
+#white h2 {
+    text-align: center;
+    font-size: 40px;
+    margin: 0px;
+    padding: 50px;
+}
+
+.card_1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+/* .card_1 .image:hover {
+    box-shadow: 0 0 45px var(--second-bg-color);
+    transition: 0.6s;
+} */
+.card_1-1:hover {
+    box-shadow: 0 0 45px var(--second-bg-color);
+    transition: 0.6s;
+}
+
+.card_1-1 {
+    width: 350px;
+    height: 400px;
+    background-color: var(--second-bg-color);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.card_1-1 .image {
+    background-image: url(./media/branding.jpg);
+    background-size: cover;
+    height: 300px;
+    width: 350px;
+    border-radius: 19px;
+}
+
+.card_1-1 p {
+    color: var(--text-color);
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* sezione blue */
+/* #blue-1 {
+    width: 100vw;
+    min-height: 500px;
+    padding-bottom: 40px;
+    background-color: var(--second-bg-color);
+}
+
+#blue-1 h2 {
+    text-align: center;
+    font-size: 50px;
+    margin: 0px auto;
+    padding: 50px;
+    color: var(--text-color);
+    height: auto;
+}
+
+.blue-comment {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 1000px;
+    margin: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: var(--text-color);
+}
+
+.comment {
+    width: 300px;
+    height: 200px;
+}
+
+.comment img {
+    border-radius: 10%;
+    margin-right: 20px;
+}
+
+.comment h4 {
+    font-size: 20px;
+    margin: 0px;
+    color: var(--bg-color);
+}
+
+.comment-image {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.comment p {
+    font-size: 16px;
+    display: block;
+}
+ */
+/* --------------------------------------------- */
+
+#blue-1 {
+    width: 100vw;
+    min-height: 500px;
+    padding-bottom: 40px;
+    background-color: #2D5FCF;
+}
+
+#blue-1 h2 {
+    text-align: center;
+    font-size: 50px;
+    margin: 0px auto;
+    padding: 50px;
+    color: #fff;
+    height: auto;
+}
+
+.blue-comment {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 1000px;
+    margin: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: #fff;
+}
+
+.comment {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    width: 300px;
+    height: 200px;
+}
+
+.comment img {
+    border-radius: 10%;
+    margin-right: 20px;
+}
+
+.comment h4 {
+    font-size: 20px;
+    margin: 0;
+    color: #b2ef38;
+}
+
+.comment-image .comment-image-1 {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.comment p {
+    font-size: 16px;
+    display: block;
+}
+
+/* ------------------------------------ */
+
+/* sezione contact */
+#contact {
+    min-height: 500px;
+    background-color: #CCE859;
+    padding: 100px;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 1000px;
+    margin: auto;
+    gap: 20px;
+}
+
+.contact-1 {
+    width: 400px;
+    height: 400px;
+    position: relative;
+}
+
+.contact-1 {
+    background-image: url(https://picsum.photos/seed/picsum/500/400);
+    background-size: cover;
+    border-radius: 120px 0px 120px 0px;
+    position: relative;
+}
+
+.contact-1 svg{
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+}
+
+.contact-1 .icon {
+    background-color: #2D5FCF;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 340px;
+    left: -20px;
+}
+
+.contact-2 {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.contact-2 h2 {
+    font-size: 30px;
+    font-weight: 800;
+    margin: 0px;
+}
+
+.contact-2 p {
+    margin: 0;
+}
+
+.contact-2 p:nth-child(2n) {
+    font-weight: 800;
+    margin-top: 40px;
+}
+
+.contact-2 button {
+    background-color: #2D5FCF;
+    border-radius: 4px;
+    color: #fff;
+    margin-top: 25px;
+}
+
+.contact-2 button:hover {
+    transform: scale(1.05);
+    box-shadow: 1px 1px 6px #000;
+}
+
+/* ----------------------------------- */
+
+/* sezione icon per tornare su */
+.icon-1 {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+    box-shadow: 2px 2px 6px #4e4e4e;
+    position: fixed;
+    top: 90%;
+    left: 90%;
+}
+
+.icon-1:hover {
+    background-color: #000;
+}
+
+.icon-1 a {
+    text-decoration: none;
+    color: #fff;
+}
+.icon-1-1 {
+    color: var(--text-color);
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 10px;
+    right: -20px;
+}
+
+/* ------------------------------------------- */
+
+/* aggiungo le media queries per ottimizzare la visualizzazione sui dispositivi mobile */
+
+@media screen and (max-width: 520px) {
+    h1 {
+        padding: 20px;
+        font-size: 70px;
+    }
+
+    .blue {
+        padding: 40px;
+    }
+
+    #contact {
+        padding: 40px;
+    }
+
+    .icon-1 {
+        top: 90%;
+        left: 80%;
+    }
+}
+
+
+/* esercizio loader */
+.spazio {
+    width: 100ww;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.loading {
+    width: 100px;
+    height: 100px;
+    border: 3px solid #000;
+    border-radius: 50%;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    animation: spin 1s infinite linear;
+    transform: rotate(0deg);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
